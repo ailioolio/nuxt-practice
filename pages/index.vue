@@ -2,6 +2,7 @@
   <div class="main">
     <h1 class="main__hello">{{ hello }}</h1>
     <CategoryLabel>場所</CategoryLabel>
+    <CategoryLabel :isLarge="true">イベント</CategoryLabel>
     <div class="main__user">
       <UserIcon
         imagePath="https://ca.slack-edge.com/THKEQG3CG-U01U57LGAJ0-01665b4814b7-512"
