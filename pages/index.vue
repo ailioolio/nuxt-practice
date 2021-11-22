@@ -9,6 +9,10 @@
         imageAlt="あーりおおーりお"
       />
     </div>
+
+    <BaseModal>
+      <h1>modal!!!!</h1>
+    </BaseModal>
   </div>
 </template>
 
@@ -16,11 +20,13 @@
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import CategoryLabel from "~/components/shared/CategoryLabel.vue";
 import UserIcon from "~/components/shared/UserIcon.vue";
+import BaseModal from "~/components/shared/modals/BaseModal.vue";
 
 export default defineComponent({
   components: {
     CategoryLabel,
     UserIcon,
+    BaseModal,
   },
   setup() {
     const hello = ref<string>("Hello, world!");
