@@ -1,6 +1,7 @@
 <template>
   <Overlay>
     <div class="modal">
+      <CloseIcon class="modal__close" />
       <slot />
     </div>
   </Overlay>
@@ -9,10 +10,12 @@
 <script lang="ts">
 import { defineComponent } from "@nuxtjs/composition-api";
 import Overlay from "~/components/shared/Overlay.vue";
+import CloseIcon from "~/components/shared/icons/CloseIcon.vue";
 
 export default defineComponent({
   components: {
     Overlay,
+    CloseIcon,
   },
 });
 </script>
@@ -29,6 +32,17 @@ export default defineComponent({
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 16px;
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    // transition: 2s;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 
   @media screen and (min-width: px) {
   }

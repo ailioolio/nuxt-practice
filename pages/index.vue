@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import CategoryLabel from "~/components/shared/CategoryLabel.vue";
-import UserIcon from "~/components/shared/UserIcon.vue";
+import UserIcon from "~/components/shared/icons/UserIcon.vue";
 import BaseModal from "~/components/shared/modals/BaseModal.vue";
 
 export default defineComponent({
