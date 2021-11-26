@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <h1 class="main__hello">{{ hello }}</h1>
+    <h1 class="main__hello" @click="openModal">{{ hello }}</h1>
     <CategoryLabel>場所</CategoryLabel>
     <CategoryLabel :isLarge="true">イベント</CategoryLabel>
     <div class="main__user">
@@ -10,7 +10,7 @@
       />
     </div>
 
-    <BaseModal>
+    <BaseModal v-show="modalState" @close="closeModal">
       <h1>modal!!!!</h1>
     </BaseModal>
   </div>
@@ -30,9 +30,21 @@ export default defineComponent({
   },
   setup() {
     const hello = ref<string>("Hello, world!");
+    const modalState = ref<boolean>(false);
+
+    const closeModal = () => {
+      modalState.value = false;
+    };
+
+    const openModal = () => {
+      modalState.value = true;
+    };
 
     return {
       hello,
+      modalState,
+      closeModal,
+      openModal,
     };
   },
 });

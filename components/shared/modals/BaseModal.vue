@@ -1,14 +1,14 @@
 <template>
   <Overlay>
     <div class="modal">
-      <CloseIcon class="modal__close" />
+      <CloseIcon class="modal__close" @close="close" />
       <slot />
     </div>
   </Overlay>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxtjs/composition-api";
+import { defineComponent, SetupContext } from "@nuxtjs/composition-api";
 import Overlay from "~/components/shared/Overlay.vue";
 import CloseIcon from "~/components/shared/icons/CloseIcon.vue";
 
@@ -16,6 +16,15 @@ export default defineComponent({
   components: {
     Overlay,
     CloseIcon,
+  },
+
+  setup(_, context: SetupContext) {
+    const close = () => {
+      context.emit("close");
+    };
+    return {
+      close,
+    };
   },
 });
 </script>
@@ -44,7 +53,7 @@ export default defineComponent({
     }
   }
 
-  @media screen and (min-width: px) {
-  }
+  // @media screen and (min-width: px) {
+  // }
 }
 </style>
