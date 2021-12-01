@@ -5,7 +5,7 @@
     <div class="main__user">
       <UserIcon
         imagePath="https://ca.slack-edge.com/THKEQG3CG-U01U57LGAJ0-01665b4814b7-512"
-        imageAlt="あーりおおーりお"
+        imageAlt="あーりおおーりおぺぺろんちーの"
       />
     </div>
   </div>
