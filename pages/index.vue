@@ -9,6 +9,7 @@
         imageAlt="あーりおおーりお"
       />
     </div>
+    <h2>ああ</h2>
 
     <BaseModal v-show="modalState" @close="closeModal">
       <h1>modal!!!!</h1>
