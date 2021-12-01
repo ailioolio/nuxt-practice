@@ -11,7 +11,7 @@
     </div>
 
     <BaseModal v-show="modalState" @close="closeModal">
-      <h1>modal!!!!</h1>
+      <h1>modal</h1>
     </BaseModal>
   </div>
 </template>
