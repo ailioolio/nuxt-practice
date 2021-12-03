@@ -1,10 +1,24 @@
 <template>
-  <div class="label">
+  <div class="label" :class="{ large: isLarge }">
     <span class="label__text">
       <slot />
     </span>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent, PropType } from "@nuxtjs/composition-api";
+
+export default defineComponent({
+  props: {
+    isLarge: {
+      type: Boolean as PropType<boolean>,
+      default: false,
+    },
+  },
+  setup() {},
+});
+</script>
 
 <style lang="scss" scoped>
 .label {
@@ -20,5 +34,9 @@
     font-weight: bold;
     line-height: 28px;
   }
+}
+
+.large {
+  width: 88px;
 }
 </style>

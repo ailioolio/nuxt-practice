@@ -1,31 +1,50 @@
 <template>
   <div class="main">
-    <h1 class="main__hello">{{ hello }}</h1>
+    <h1 class="main__hello" @click="openModal">{{ hello }}</h1>
     <CategoryLabel>場所</CategoryLabel>
+    <CategoryLabel :isLarge="true">イベント</CategoryLabel>
     <div class="main__user">
       <UserIcon
         imagePath="https://ca.slack-edge.com/THKEQG3CG-U01U57LGAJ0-01665b4814b7-512"
         imageAlt="あーりおおーりおぺぺろんちーの"
       />
     </div>
+
+    <BaseModal v-show="modalState" @close="closeModal">
+      <h1>modal</h1>
+    </BaseModal>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import CategoryLabel from "~/components/shared/CategoryLabel.vue";
-import UserIcon from "~/components/shared/UserIcon.vue";
+import UserIcon from "~/components/shared/icons/UserIcon.vue";
+import BaseModal from "~/components/shared/modals/BaseModal.vue";
 
 export default defineComponent({
   components: {
     CategoryLabel,
     UserIcon,
+    BaseModal,
   },
   setup() {
     const hello = ref<string>("Hello, world!");
+    const modalState = ref<boolean>(false);
+
+    const closeModal = () => {
+      modalState.value = false;
+    };
+
+    const openModal = () => {
+      modalState.value = true;
+    };
 
     return {
       hello,
+      modalState,
+      closeModal,
+      openModal,
     };
   },
 });
